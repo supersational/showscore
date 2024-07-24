@@ -1,25 +1,13 @@
 # ShowScore
 
-[Music21](https://github.com/cuthbertLab/music21) is an excellent library for working with music notation in Python.
-However, to render sheet music you need to install an external program and
-configure paths. ShowScore can render scores beautifully, without any
-dependencies (and faster to boot!). We do this by using
+[Music21](https://github.com/cuthbertLab/music21) is an excellent library for
+working with music notation in Python. However, to render sheet music you need
+to install an external program and configure paths. ShowScore can render scores
+beautifully, without any dependencies (and faster to boot!). We do this by using
 [OpenSheetMusicDisplay](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay),
 an open-source music renderer written in JavaScript.
 
 ### Usage
-
-```python
-from showscore import show
-from music21 import corpus
-score = corpus.parse('bwv565')
-
-# score will be rendered below cell:
-show(score)
-
-# open score in new tab:
-show(score, tab=True)
-```
 
 ```python
 from music21 import *
@@ -32,6 +20,18 @@ score = converter.parse(abc_notation)
 
 from showscore import show
 show(score)
+```
+
+```python
+from showscore import show
+from music21 import corpus
+score = corpus.parse('bwv565')
+
+# score will be rendered below cell:
+show(score)
+
+# open score in new tab:
+show(score, tab=True)
 ```
 
 ### Options

@@ -6,7 +6,7 @@ requires-python = ">=3.8"
 authors = [{ name = "Sven Hollowell" }]
 license = { text = "MIT" }
 dependencies = ["music21"]
-dynamic = ["version"]                                      # get from __version__
+version = "0.1.0"
 
 [project.urls]
 Homepage = "https://github.com/supersational/showscore"

@@ -1,0 +1,18 @@
+[project]
+name = "showscore"
+description = "Render music21 scores in jupyter notebooks"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = "Sven Hollowell"}]
+license = {text = "MIT"}
+dependencies = ["music21"]
+dynamic = ["version"] # get from __version__
+
+[project.urls]
+Homepage = "https://github.com/supersational/showscore"
+Changelog = "https://github.com/supersational/showscore/releases"
+Issues = "https://github.com/supersational/showscore/issues"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"

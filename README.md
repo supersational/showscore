@@ -7,6 +7,10 @@ beautifully, without any dependencies (and faster to boot!). We do this by using
 [OpenSheetMusicDisplay](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay),
 an open-source music renderer written in JavaScript.
 
+### Install
+
+`pip install showscore`
+
 ### Usage
 
 ```python

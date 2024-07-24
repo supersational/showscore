@@ -1,10 +1,14 @@
 # ShowScore
 
 Music21 is an excellent library for working with music notation in Python.
-However, to render sheet music you need to install an external program and configure paths. ShowScore can render scores beautifully, without any dependencies (and faster to boot!). We do this by using [OpenSheetMusicDisplay](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay), an open-source music renderer written in JavaScript.
+However, to render sheet music you need to install an external program and
+configure paths. ShowScore can render scores beautifully, without any
+dependencies (and faster to boot!). We do this by using
+[OpenSheetMusicDisplay](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay),
+an open-source music renderer written in JavaScript.
 
 ### Usage
-    
+
 ```python
 from showscore import show
 from music21 import corpus
@@ -16,7 +20,6 @@ show(score)
 # open score in new tab:
 show(score, tab=True)
 ```
-
 
 ```python
 from music21 import *
@@ -31,24 +34,26 @@ from showscore import show
 show(score)
 ```
 
-
 ### Options
 
 - `showscore.backend` - currently one of 'canvas' (default) or 'svg'
-    - canvas is more performant and less laggy - but won't resize automatically
-    - use `showscore.backend = 'svg'` to use svg renderer
+  - canvas is more performant and less laggy - but won't resize automatically
+  - use `showscore.backend = 'svg'` to use svg renderer
 - `show(score, title=True, tab=False)`
-    - `title` - false to hide title
-    - `tab` - open in new tab rather than inline
-
+  - `title` - false to hide title
+  - `tab` - open in new tab rather than inline
 
 ### Known bugs
 
-Some corpus pieces give rendering errors. E.g. 'bach/bwv846' has an error in Chrome. These are bugs in the OS
-If a piece fails to render it will display the error message in red.
+Some corpus pieces give rendering errors. E.g. 'bach/bwv846' has an error in
+Chrome. These are bugs in the OS If a piece fails to render it will display the
+error message in red.
 
- - Several pieces (e.g. 'bach/bwv846') will display 'Error rendering data:TypeError: Cannot read properties of undefined (reading 'TempoExpressions')' this is a bug in OpenSheetMusicDisplay. For now use the fix below.
- - If you see anything else open an [Issue
+- Several pieces (e.g. 'bach/bwv846') will display 'Error rendering
+  data:TypeError: Cannot read properties of undefined (reading
+  'TempoExpressions')' this is a bug in OpenSheetMusicDisplay. For now use the
+  fix below.
+- If you see anything else open an [Issue
 
 ```python
 from music21 import corpus
@@ -62,7 +67,7 @@ for el in score.recurse().getElementsByClass('MetronomeMark'):
 show(score)
 ```
 
-
 ### Tested in
+
 - VSCode Notebooks
 - Jupyter lab

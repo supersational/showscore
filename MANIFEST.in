@@ -1,0 +1,5 @@
+# Include all .js files recursively
+recursive-include *.js
+
+# Include all Python files recursively
+recursive-include * *.py

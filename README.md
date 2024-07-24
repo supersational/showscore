@@ -1,6 +1,6 @@
 # ShowScore
 
-Music21 is an excellent library for working with music notation in Python.
+[Music21](https://github.com/cuthbertLab/music21) is an excellent library for working with music notation in Python.
 However, to render sheet music you need to install an external program and
 configure paths. ShowScore can render scores beautifully, without any
 dependencies (and faster to boot!). We do this by using

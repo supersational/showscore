@@ -3,6 +3,3 @@ recursive-include * *.js
 
 # Include all Python files recursively
 recursive-include * *.py
-
-# Include README.md
-include README.md

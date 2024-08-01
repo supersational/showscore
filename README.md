@@ -26,14 +26,16 @@ from showscore import show
 show(score)
 ```
 
+### Notebook example
+
+![Example code for rendering Bohemian Rhapsody](https://github.com/user-attachments/assets/a2501a11-5041-4755-999d-13e6f3edff6f)
+
+
+### Non-Jupyter usage
+
+The music will open in a new browser window if run from a non-jupyter environment (e.g. interactive shell). Or can be specified manually:
+
 ```python
-from showscore import show
-from music21 import corpus
-score = corpus.parse('bwv565')
-
-# score will be rendered below cell:
-show(score)
-
 # open score in new tab:
 show(score, tab=True)
 ```
@@ -49,15 +51,10 @@ show(score, tab=True)
 
 ### Known bugs
 
-Some corpus pieces give rendering errors. E.g. 'bach/bwv846' has an error in
-Chrome. These are bugs in the OS If a piece fails to render it will display the
-error message in red.
+Some corpus pieces give rendering errors. E.g. 'bach/bwv846' has an error in Chrome (but not VSCode). These are bugs in the underlying libraries - and error messages are displayed in red instead of the score.
 
-- Several pieces (e.g. 'bach/bwv846') will display 'Error rendering
-  data:TypeError: Cannot read properties of undefined (reading
-  'TempoExpressions')' this is a bug in OpenSheetMusicDisplay. For now use the
-  fix below.
-- If you see anything else open an [Issue
+- There is a known bug with displaying 'TempoExpressions' which can be fixed with the below code.
+- If you see anything else please open an [Issue](https://github.com/supersational/showscore/issues)
 
 ```python
 from music21 import corpus

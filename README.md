@@ -43,7 +43,8 @@ show(score, tab=True)
 ### Options
 
 - `showscore.backend` - currently one of 'canvas' (default) or 'svg'
-  - canvas is more performant and less laggy - but won't resize automatically
+  - canvas is faster to render and doesn't slow down scrolling
+  - svg will (probably) look nicer when printing at high resolutions
   - use `showscore.backend = 'svg'` to use svg renderer
 - `show(score, title=True, tab=False)`
   - `title` - false to hide title

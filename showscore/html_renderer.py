@@ -86,7 +86,7 @@ def showXML(xml, title=True, tab=False):
 
     if runningInNotebook() == True and tab == False:
         # display the score inline in the notebook
-        from IPython.core.display import HTML, Javascript, display
+        from IPython.display import HTML, Javascript, display
 
         display(HTML(f'<div id="{divId}"></div>'))
         display(Javascript(script))

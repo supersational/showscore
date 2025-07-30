@@ -40,21 +40,31 @@ The music will open in a new browser window if run from a non-jupyter environmen
 show(score, tab=True)
 ```
 
+### Backend
+
+Rendering using 'svg' (default) or 'canvas' will look the same, but have slight differences:
+  - svg will (probably) look nicer when printing at high resolutions, and easier to modify.
+  - canvas is faster to render and doesn't slow down scrolling.
+  - use `showscore.show(score, backend='canvas')` to use canvas renderer
+
 ### Options
 
-- `showscore.backend` - currently one of 'canvas' (default) or 'svg'
-  - canvas is faster to render and doesn't slow down scrolling
-  - svg will (probably) look nicer when printing at high resolutions
-  - use `showscore.backend = 'svg'` to use svg renderer
-- `show(score, title=True, tab=False)`
-  - `title` - false to hide title
-  - `tab` - open in new tab rather than inline
+```yaml
+score: The music21 score object to display.
+title: A string to set as the score's title.
+subtitle: A string to set as the score's subtitle.
+composer: A string to set as the score's composer.
+tab: If True, forces the score to open in a new browser tab.
+osmd_options: A dictionary of top-level OSMD options (e.g., backend, darkMode).
+engraving_rules: A dictionary of fine-grained OSMD EngravingRules.
+```
+See source code for more details on [osmd options](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/blob/c4209608320572c7875a21c99a5c263a14b45e17/src/OpenSheetMusicDisplay/OSMDOptions.ts#L21) and [engraving rules](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/blob/c4209608320572c7875a21c99a5c263a14b45e17/src/MusicalScore/Graphical/EngravingRules.ts#L26).
 
 ### Known bugs
 
 Some corpus pieces give rendering errors. E.g. 'bach/bwv846' has an error in Chrome (but not VSCode). These are bugs in the underlying libraries - and error messages are displayed in red instead of the score.
 
-- There is a known bug with displaying 'TempoExpressions' which can be fixed with the below code.
+- There is a known bug with displaying 'TempoExpressions' which is fixed in showscore 2.0.0 (since upgrading to OSMD 1.9.0).
 - If you see anything else please open an [Issue](https://github.com/supersational/showscore/issues)
 
 ```python
@@ -62,10 +72,6 @@ from music21 import corpus
 from showscore import show
 score = corpus.parse('bach/bwv846')  # Prelude in C
 
-# filter out metronome marks to fix rendering error
-for el in score.recurse().getElementsByClass('MetronomeMark'):
-    el.activeSite.remove(el)
-    
 show(score)
 ```
 

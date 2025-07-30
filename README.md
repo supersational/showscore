@@ -42,7 +42,10 @@ show(score, tab=True)
 
 ### Formatting options
 
-Demo code is in [neon-fugue.py](neon-fugue.py) and [vulfpeck-demo.py](vulfpeck-demo.py).
+Demo code for the below image is in [neon-fugue.py](neon-fugue.py) and some font stuff in [vulfpeck-demo.py](vulfpeck-demo.py).
+
+<img width="1446" height="625" alt="image" src="https://github.com/user-attachments/assets/556d1d4e-548d-4471-94aa-62a92fc3d1a3" />
+
 
 ### Backend
 

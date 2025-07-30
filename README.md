@@ -26,19 +26,23 @@ from showscore import show
 show(score)
 ```
 
-### Notebook example
+### How it looks
 
 ![Example code for rendering Bohemian Rhapsody](https://github.com/user-attachments/assets/a2501a11-5041-4755-999d-13e6f3edff6f)
 
 
-### Non-Jupyter usage
+### Other usage examples
 
-The music will open in a new browser window if run from a non-jupyter environment (e.g. interactive shell). Or can be specified manually:
+We detect the environment automatically. If in a terminal the music will open in a new browser window.
 
 ```python
-# open score in new tab:
+# tab=true makes it always open the score in new tab:
 show(score, tab=True)
 ```
+
+### Formatting options
+
+Demo code is in [neon-fugue.py](neon-fugue.py) and [vulfpeck-demo.py](vulfpeck-demo.py).
 
 ### Backend
 

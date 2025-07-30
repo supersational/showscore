@@ -2,12 +2,7 @@ from showscore import show
 import music21 as m21
 
 score = m21.corpus.parse('beethoven/opus133.mxl')
-score = score.measures(0, 10)
-
-
-def rgb_to_hex(rgb):
-    return '#{:02x}{:02x}{:02x}'.format(*rgb)
-
+score = score.measures(0, 10) # big score so cut it down!
 
 part_colors = {
     "1st Violin": "#2BFA4A",
